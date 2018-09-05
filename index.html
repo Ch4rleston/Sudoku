@@ -1,0 +1,163 @@
+<html>
+<head>
+<link rel="shortcut icon" href="icon.png">
+<title>	THE BEST SUDOKU </title>
+<style media="screen">
+
+  html,body{
+    width: 100%;
+    height: 100%;
+  }
+
+  #container{
+    margin: 3% auto;
+    width: 500px;
+    height: 700px;
+    padding: 5%;
+    background-image: linear-gradient(to bottom,gray, lightgrey);
+    border-radius: 200px;
+  }
+
+  td,input{
+    width: 50px;
+    height: 50px;
+    font-size: 32pt;
+    text-align: center;
+    background-color: lightgray;
+    border: 0px;
+    font-family: cursive;
+    color: black;
+  }
+ 
+  input:focus{
+    background-color: gray;
+  }
+
+  td{
+    border: 0.5px dashed grey;
+  }
+
+  table{
+    border-collapse: collapse;
+    margin-bottom: 50px;
+  }
+
+  #botao{
+    text-align: center;    
+  }
+
+  button{
+    font-family: cursive;
+    font-size: 28pt;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 2.5px #888888;
+  }
+
+  #tit{
+    font-size: 70pt;
+    text-align: center;
+    font-family: georgia;
+    font-weight: bold;
+    text-shadow: 5px 5px 2.5px white;
+    margin-top: -30px;
+    margin-bottom: 20px;
+  }
+
+  #col1,#col2,#col3,#col4,#col5,#col6,#col7,#col8,#col9,#col28,#col29,#col30,#col31,#col32,#col33,#col34,#col35,#col36,#col55,#col56,#col57,#col58,#col59,#col60,#col61,#col62,#col63{
+      border-top: solid black 4px;
+  }
+
+  #col73,#col74,#col75,#col76,#col77,#col78,#col79,#col80,#col81{
+      border-bottom: solid black 4px;
+  }
+
+  #col1,#col10,#col19,#col28,#col37,#col46,#col55,#col64,#col73{
+      border-left: solid black 4px;
+  }
+
+  #col3,#col12,#col21,#col30,#col39,#col48,#col57,#col66,#col75,#col6,#col15,#col24,#col33,#col42,#col51,#col60,#col69,#col78,#col9,#col18,#col27,#col36,#col45,#col54,#col63,#col72,#col81{
+      border-right: solid black 4px;
+  }
+</style>
+
+</head>
+<body onload=load()>
+  <div id="container">
+  <div id="tit">SUDOKU</div>
+    <table>
+      <tr><td id="col1"><input type="text" name="pesq" value=8 readonly="true"></input></td><td id="col2"><input type="text" name="pesq" value=3 readonly="true"></input></td><td id="col3"><input type="text" name="pesq" value=></input></td><td id="col4"><input type="text" name="pesq" value=1 readonly="true"></input></td><td id="col5"><input type="text" name="pesq" value=></input></td>
+      <td id="col6"><input type="text" name="pesq" value=></input></td><td id="col7"><input type="text" name="pesq" value=6 readonly="true"></input></td><td id="col8"><input type="text" name="pesq" value=></input></td><td id="col9"><input type="text" name="pesq" value=5 readonly="true"></input></td></tr>
+
+      <tr><td id="col10"><input type="text" name="pesq" value=></input></td><td id="col11"><input type="text" name="pesq" value=></input></td><td id="col12"><input type="text" name="pesq" value=></input></td><td id="col13"><input type="text" name="pesq" value=></input></td><td id="col14"><input type="text" name="pesq" value=></input></td>
+      <td id="col15"><input type="text" name="pesq" value=></input></td><td id="col16"><input type="text" name="pesq" value=></input></td><td id="col17"><input type="text" name="pesq" value=8 readonly="true"></input></td><td id="col18"><input type="text" name="pesq" value=></input></td></tr>
+
+      <tr><td id="col19"><input type="text" name="pesq" value=></input></td><td id="col20"><input type="text" name="pesq" value=></input></td><td id="col21"><input type="text" name="pesq" value=></input></td><td id="col22"><input type="text" name="pesq" value=7 readonly="true"></input></td><td id="col23"><input type="text" name="pesq" value=></input></td>
+      <td id="col24"><input type="text" name="pesq" value=></input></td><td id="col25"><input type="text" name="pesq" value=9 readonly="true"></input></td><td id="col26"><input type="text" name="pesq" value=></input></td><td id="col27"><input type="text" name="pesq" value=></input></td></tr>
+
+      <tr><td id="col28"><input type="text" name="pesq" value=></input></td><td id="col29"><input type="text" name="pesq" value=5 readonly="true"></input></td><td id="col30"><input type="text" name="pesq" value=></input></td><td id="col31"><input type="text" name="pesq" value=></input></td><td id="col32"><input type="text" name="pesq" value=1 readonly="true"></input></td>
+      <td id="col33"><input type="text" name="pesq" value=7 readonly="true"></input></td><td id="col34"><input type="text" name="pesq" value=></input></td><td id="col35"><input type="text" name="pesq" value=></input></td><td id="col36"><input type="text" name="pesq" value=></input></td></tr>
+
+      <tr><td id="col37"><input type="text" name="pesq" value=></input></td><td id="col38"><input type="text" name="pesq" value=></input></td><td id="col39"><input type="text" name="pesq" value=3 readonly="true"></input></td><td id="col40"><input type="text" name="pesq" value=></input></td><td id="col41"><input type="text" name="pesq" value=></input></td>
+      <td id="col42"><input type="text" name="pesq" value=></input></td><td id="col43"><input type="text" name="pesq" value=2 readonly="true"></input></td><td id="col44"><input type="text" name="pesq" value=></input></td><td id="col45"><input type="text" name="pesq" value=></input></td></tr>
+
+      <tr><td id="col46"><input type="text" name="pesq" value=></input></td><td id="col47"><input type="text" name="pesq" value=></input></td><td id="col48"><input type="text" name="pesq" value=></input></td><td id="col49"><input type="text" name="pesq" value=3 readonly="true"></input></td><td id="col50"><input type="text" name="pesq" value=4 readonly="true"></input></td>
+      <td id="col51"><input type="text" name="pesq" value=></input></td><td id="col52"><input type="text" name="pesq" value=></input></td><td id="col53"><input type="text" name="pesq" value=1 readonly="true"></input></td><td id="col54"><input type="text" name="pesq" value=></input></td></tr>
+
+      <tr><td id="col55"><input type="text" name="pesq" value=></input></td><td id="col56"><input type="text" name="pesq" value=></input></td><td id="col57"><input type="text" name="pesq" value=4 readonly="true"></input></td><td id="col58"><input type="text" name="pesq" value=></input></td><td id="col59"><input type="text" name="pesq" value=></input></td>
+      <td id="col60"><input type="text" name="pesq" value=8 readonly="true"></input></td><td id="col61"><input type="text" name="pesq" value=></input></td><td id="col62"><input type="text" name="pesq" value=></input></td><td id="col63"><input type="text" name="pesq" value=></input></td></tr>
+
+      <tr><td id="col64"><input type="text" name="pesq" value=></input></td><td id="col65"><input type="text" name="pesq" value=9 readonly="true"></input></td><td id="col66"><input type="text" name="pesq" value=></input></td><td id="col67"><input type="text" name="pesq" value=></input></td><td id="col68"><input type="text" name="pesq" value=></input></td>
+      <td id="col69"><input type="text" name="pesq" value=></input></td><td id="col70"><input type="text" name="pesq" value=></input></td><td id="col71"><input type="text" name="pesq" value=></input></td><td id="col72"><input type="text" name="pesq" value=></input></td></tr>
+
+      <tr><td id="col73"><input type="text" name="pesq" value=3 readonly="true"></input></td><td id="col74"><input type="text" name="pesq" value=></input></td><td id="col75"><input type="text" name="pesq" value=2 readonly="true"></input></td><td id="col76"><input type="text" name="pesq" value=></input></td><td id="col77"><input type="text" name="pesq" value=></input></td>
+      <td id="col78"><input type="text" name="pesq" value=6 readonly="true" readonly="true"></input></td><td id="col79"><input type="text" name="pesq" value=></input></td><td id="col80"><input type="text" name="pesq" value=4 readonly="true"></input></td><td id="col81"><input type="text" name="pesq" value=7 readonly="true"></input></td></tr>
+    </table>
+    <div id="botao"><button onclick="location.reload()">CLEAR</button></div>
+  </div>
+
+<script>
+  var press = document.querySelectorAll("input");
+  var permissao="123456789";
+  var cont=document.getElementById('container');
+  var start="8,3,0,1,0,0,6,0,5,0,0,0,0,0,0,0,8,0,0,0,0,7,0,0,9,0,0,0,5,0,0,1,7,0,0,0,0,0,3,0,0,0,2,0,0,0,0,0,3,4,0,0,1,0,0,0,4,0,0,8,0,0,0,0,9,0,0,0,0,0,0,0,3,0,2,0,0,6,0,4,7".split(",");
+
+var solve="8,3,7,1,9,4,6,2,5,5,4,9,6,2,3,7,8,1,6,2,1,7,8,5,9,3,4,2,5,6,8,1,7,4,9,3,4,1,3,5,6,9,2,7,8,9,7,8,3,4,2,5,1,6,1,6,4,2,7,8,3,5,9,7,9,5,4,3,1,8,6,2,3,8,2,9,5,6,1,4,7".split(",");
+
+var load=function(){
+	for(var i=0;i<press.length;i++){
+	if(press[i].value==0) press[i].style.visibility=hidden;		
+press[i].value=start[i];
+	
+	}
+}
+
+for(var i =0;i<press.length;i++){
+	press[i].onkeydown = function(e){
+		if(e.key == "Tab") press[i+1].focus();
+	  	if((permissao.indexOf(e.key) <0 ) && (e.key != "Delete") && (e.key != "Backspace") && (e.key != "ArrowLeft") && (e.key != "ArrowRight")){
+        		e.preventDefault();
+  		}
+  	}
+	press[i].onkeyup = function(e){
+		var all=0;
+		for(var k=0;k<press.length;k++){
+			if(press[k].value==parseInt(solve[k])){
+				press[k].style.color="black";
+				all++;
+			}else{
+				press[k].style.color="red";
+				
+			}
+     		}
+		if(all==81) {
+alert("YOU WIN!");
+for(var k=0;k<press.length;k++){
+press[k].style.color="green";
+}
+}	
+	}
+}
+</script>
+</body>
+</html>
